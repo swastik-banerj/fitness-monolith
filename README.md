@@ -13,7 +13,7 @@ This application supports authentication, activity tracking, and secure API acce
 
 🛡️ Spring Security Integration
 
-🗄️ MySQL Database Integration
+🗄️ PostgreSQL Database Integration
 
 🐳 Dockerized Deployment
 
