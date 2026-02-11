@@ -14,15 +14,17 @@ import java.util.List;
 @RequestMapping("/api/activities")
 @RequiredArgsConstructor
 public class ActivityController {
-    private final ActivityService activityService;
+    private final ActivityService activityService=null;
 
     @PostMapping("/trackActivity")
     public ResponseEntity<ActivityResponse> trackActivity(@RequestBody ActivityRequest request){
         return ResponseEntity.ok(activityService.trackActivity(request));
     }
 
-    /*@GetMapping("/trackActivity")
-    public ResponseEntity<List<ActivityResponse>> getActivity(){
-
-    } */
+    @GetMapping("/getActivity")
+    public ResponseEntity<List<ActivityResponse>> getUserActivities(
+            @RequestHeader(value = "X-User-ID") String userId
+    ){
+        return ResponseEntity.ok(activityService.getUserActivities(userId));
+    }
 }
